@@ -366,7 +366,7 @@ class VisualCeption extends CodeceptionModule
      */
     private function createScreenshot($identifier, array $coords, array $excludeElements = array())
     {
-        $screenShotDir = \Codeception\Configuration::logDir() . 'debug/';
+        $screenShotDir = \Codeception\Configuration::outputDir() . 'debug/';
 
         if (!is_dir($screenShotDir)) {
             mkdir($screenShotDir, 0777, true);
@@ -449,7 +449,7 @@ class VisualCeption extends CodeceptionModule
      */
     private function getDeviationScreenshotPath ($identifier, $alternativePrefix = '')
     {
-        $debugDir = \Codeception\Configuration::logDir() . 'debug/';
+        $debugDir = \Codeception\Configuration::outputDir() . 'debug/';
         $prefix = ( $alternativePrefix === '') ? 'compare' : $alternativePrefix;
         return $debugDir . $prefix . $this->getScreenshotName($identifier);
     }
@@ -518,7 +518,7 @@ class VisualCeption extends CodeceptionModule
         if (!$this->config['report']) {
             return;
         }
-        $this->logFile = \Codeception\Configuration::logDir() . 'vcresult.html';
+        $this->logFile = \Codeception\Configuration::outputDir() . 'vcresult.html';
 
         if (array_key_exists('templateVars', $this->config)) {
             $this->templateVars = $this->config["templateVars"];
