@@ -20,7 +20,7 @@ use Codeception\Module\VisualCeption\Utils;
  */
 class VisualCeption extends CodeceptionModule
 {
-    protected $config = [
+    protected array $config = [
         'maximumDeviation' => 0,
         'saveCurrentImageIfFailure' => true,
         'referenceImageDir' => 'VisualCeption/',
